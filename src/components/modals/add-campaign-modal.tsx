@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Calendar, DollarSign, Trophy, FileText, Image as ImageIcon, Upload } from "lucide-react";
+import { Upload, Calendar, Trophy, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

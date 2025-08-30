@@ -7,8 +7,6 @@ import {
   MessageCircle,
   Eye,
   Search,
-  Filter,
-  ChevronRight,
   Clock,
   CheckCircle,
   XCircle
@@ -80,7 +78,7 @@ export default function SubmissionsPage() {
     return matchesSearch && matchesStatus && matchesCampaign;
   });
 
-  const getStatusIcon = (status) => {
+  const getStatusIcon = (status: string) => {
     switch(status) {
       case "approved":
         return <CheckCircle className="w-3 h-3" />;
@@ -93,7 +91,7 @@ export default function SubmissionsPage() {
     }
   };
 
-  const getStatusStyle = (status) => {
+  const getStatusStyle = (status: string) => {
     switch(status) {
       case "approved":
         return "bg-green-100 text-green-700";

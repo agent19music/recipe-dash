@@ -7,11 +7,10 @@ import {
   Lock,
   User,
   Globe,
-  Mail,
   Shield,
   Smartphone,
-  Save,
-  ChevronRight
+  ChevronRight,
+  Save
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

@@ -31,7 +31,7 @@ export function FloatingBackground({
   );
 }
 
-function FloatingIcon({ index, opacity, color }: { index: number; opacity: number; color: string }) {
+function FloatingIcon({ opacity, color }: { index: number; opacity: number; color: string }) {
   const randomX = Math.random() * 100;
   const randomY = Math.random() * 100;
   const randomDelay = Math.random() * 20;

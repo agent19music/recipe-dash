@@ -20,7 +20,30 @@ import { EditCampaignModal } from "@/components/modals/edit-campaign-modal";
 import { DeleteConfirmationModal } from "@/components/modals/delete-confirmation-modal";
 import { ViewDetailsModal } from "@/components/modals/view-details-modal";
 
-const campaigns = [
+interface Campaign {
+  id: number;
+  name: string;
+  status: string;
+  startDate: string;
+  endDate: string;
+  participants: number;
+  submissions: number;
+  prize: string;
+  description: string;
+}
+
+interface CampaignFormData {
+  name: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  prize: string;
+  status?: string;
+  rules?: string;
+  coverImage?: File | string;
+}
+
+const campaigns: Campaign[] = [
   {
     id: 1,
     name: "Pilau Madness",
@@ -76,8 +99,8 @@ export default function CampaignsPage() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
-  const [selectedCampaign, setSelectedCampaign] = useState<any>(null);
-  const [campaignToDelete, setCampaignToDelete] = useState<any>(null);
+  const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
+  const [campaignToDelete, setCampaignToDelete] = useState<Campaign | null>(null);
 
   const filteredCampaigns = campaigns.filter(campaign => {
     const matchesSearch = campaign.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -86,13 +109,13 @@ export default function CampaignsPage() {
   });
 
   // Modal handlers
-  const handleAddCampaign = (data: any) => {
+  const handleAddCampaign = (data: CampaignFormData) => {
     console.log("Adding new campaign:", data);
     // Here you would typically make an API call to create the campaign
     // For now, we'll just log it
   };
 
-  const handleEditCampaign = (data: any) => {
+  const handleEditCampaign = (data: CampaignFormData) => {
     console.log("Updating campaign:", selectedCampaign?.id, data);
     // Here you would typically make an API call to update the campaign
   };
@@ -103,17 +126,17 @@ export default function CampaignsPage() {
     setCampaignToDelete(null);
   };
 
-  const handleViewDetails = (campaign: any) => {
+  const handleViewDetails = (campaign: Campaign) => {
     setSelectedCampaign(campaign);
     setIsViewModalOpen(true);
   };
 
-  const handleEdit = (campaign: any) => {
+  const handleEdit = (campaign: Campaign) => {
     setSelectedCampaign(campaign);
     setIsEditModalOpen(true);
   };
 
-  const handleDelete = (campaign: any) => {
+  const handleDelete = (campaign: Campaign) => {
     setCampaignToDelete(campaign);
     setIsDeleteModalOpen(true);
   };
@@ -305,11 +328,15 @@ export default function CampaignsPage() {
         campaign={selectedCampaign}
         onEdit={() => {
           setIsViewModalOpen(false);
-          handleEdit(selectedCampaign);
+          if (selectedCampaign) {
+            handleEdit(selectedCampaign);
+          }
         }}
         onDelete={() => {
           setIsViewModalOpen(false);
-          handleDelete(selectedCampaign);
+          if (selectedCampaign) {
+            handleDelete(selectedCampaign);
+          }
         }}
       />
     </div>

@@ -8,8 +8,7 @@ import {
   Globe,
   TrendingUp,
   UserCheck,
-  UserPlus,
-  Calendar
+  UserPlus
 } from "lucide-react";
 
 const userStats = [

@@ -8,7 +8,6 @@ import {
   Upload, 
   Trophy, 
   TrendingUp,
-  Award,
   Clock,
   Eye,
   Heart,

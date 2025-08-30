@@ -4,12 +4,8 @@ import { motion } from "framer-motion";
 import {
   Clock,
   Activity,
-  Calendar,
-  TrendingUp,
   Users,
-  Eye,
-  MousePointerClick,
-  Zap
+  Eye
 } from "lucide-react";
 
 const activityMetrics = [

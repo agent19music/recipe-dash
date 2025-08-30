@@ -2,10 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  TrendingUp,
-  Users,
-  MousePointerClick,
-  Clock,
   Download,
   Calendar,
   ArrowUpRight,

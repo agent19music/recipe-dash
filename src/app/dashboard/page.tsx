@@ -6,7 +6,6 @@ import {
   Users,
   Clock,
   MousePointerClick,
-  TrendingUp,
   ChevronRight,
   ArrowUpRight,
   ArrowDownRight
@@ -74,7 +73,7 @@ export default function DashboardPage() {
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Overview</h1>
         <p className="mt-1 text-sm text-gray-500">
-          Monitor your recipe platform's performance
+          Monitor your recipe platform&apos;s performance
         </p>
       </div>
 

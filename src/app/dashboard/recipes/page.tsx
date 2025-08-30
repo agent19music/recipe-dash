@@ -6,10 +6,8 @@ import {
   Eye,
   Heart,
   Share2,
-  Clock,
   TrendingUp,
-  Star,
-  ChevronRight
+  Star
 } from "lucide-react";
 
 const topRecipes = [
